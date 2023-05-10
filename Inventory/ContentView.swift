@@ -8,14 +8,48 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Environment(\.managedObjectContext) private var moc
+    
+    @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "isTopLevel == TRUE")) private var rooms: FetchedResults<Item>
+    
+    @State private var itemDisplayStack = [Item]()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack(path: $itemDisplayStack) {
+            
+            VStack {
+                Form {
+                    ForEach(rooms) { item in
+                        NavigationLink(item.name ?? "Unnamed item", value: item)
+                    }
+                }
+                .navigationDestination(for: Item.self) { item in
+                    ItemView(itemDisplayStack: $itemDisplayStack, item: item)
+                }
+                
+                Button {
+                    let newItem = Item(context: moc)
+                    newItem.isTopLevel = true
+                    newItem.id = UUID()
+                    
+                    do {
+                        try moc.save()
+                        itemDisplayStack.append(newItem)
+                    } catch {
+                        print(error)
+                    }
+                    
+                    
+                } label: {
+                    Label("Add", systemImage: "plus")
+                }
+                
+            }
+            .navigationTitle("Inventory")
+            
         }
-        .padding()
+        
     }
 }
 
