@@ -6,16 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct InventoryApp: App {
     
-    @StateObject private var dataController = DataController()
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+                // Something something SwiftData
+                .modelContainer(for: House.self)
         }
     }
 }

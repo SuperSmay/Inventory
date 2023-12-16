@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F39D87A2B2D634F00069420 /* ImagePickerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F39D8792B2D634F00069420 /* ImagePickerWindow.swift */; };
+		9F56B0652B2BAFF300929199 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56B0642B2BAFF300929199 /* InventoryItem.swift */; };
+		9F56B0692B2BB36E00929199 /* HouseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56B0682B2BB36E00929199 /* HouseListView.swift */; };
+		9F56B06B2B2BBFD400929199 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56B06A2B2BBFD400929199 /* House.swift */; };
+		9F56B06D2B2BC11200929199 /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56B06C2B2BC11200929199 /* HouseView.swift */; };
 		9FA4D73E2A0AFBD4004E284D /* InventoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4D73D2A0AFBD4004E284D /* InventoryApp.swift */; };
 		9FA4D7402A0AFBD4004E284D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4D73F2A0AFBD4004E284D /* ContentView.swift */; };
 		9FA4D7422A0AFBD5004E284D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA4D7412A0AFBD5004E284D /* Assets.xcassets */; };
 		9FA4D7452A0AFBD5004E284D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA4D7442A0AFBD5004E284D /* Preview Assets.xcassets */; };
-		9FA4D74D2A0AFC76004E284D /* Inventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4D74B2A0AFC76004E284D /* Inventory.xcdatamodeld */; };
-		9FA4D7532A0AFECD004E284D /* InventoryDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4D7522A0AFECD004E284D /* InventoryDataController.swift */; };
 		9FA4D7552A0B0022004E284D /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4D7542A0B0022004E284D /* ItemView.swift */; };
 		9FA4D7582A0B078B004E284D /* SymbolPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA4D7572A0B078B004E284D /* SymbolPicker */; };
-		9FA4D75A2A0B680B004E284D /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4D7592A0B680A004E284D /* ImagePickerView.swift */; };
-		9FA4D75C2A0B722F004E284D /* CaptureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4D75B2A0B722F004E284D /* CaptureImageView.swift */; };
-		9FA4D75E2A0B724C004E284D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4D75D2A0B724C004E284D /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F39D8792B2D634F00069420 /* ImagePickerWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerWindow.swift; sourceTree = "<group>"; };
+		9F56B0642B2BAFF300929199 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
+		9F56B0682B2BB36E00929199 /* HouseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListView.swift; sourceTree = "<group>"; };
+		9F56B06A2B2BBFD400929199 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		9F56B06C2B2BC11200929199 /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
 		9FA4D73A2A0AFBD4004E284D /* Inventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA4D73D2A0AFBD4004E284D /* InventoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryApp.swift; sourceTree = "<group>"; };
 		9FA4D73F2A0AFBD4004E284D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FA4D7412A0AFBD5004E284D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FA4D7442A0AFBD5004E284D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9FA4D74C2A0AFC76004E284D /* Inventory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Inventory.xcdatamodel; sourceTree = "<group>"; };
-		9FA4D7522A0AFECD004E284D /* InventoryDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDataController.swift; sourceTree = "<group>"; };
 		9FA4D7542A0B0022004E284D /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
-		9FA4D7592A0B680A004E284D /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
-		9FA4D75B2A0B722F004E284D /* CaptureImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureImageView.swift; sourceTree = "<group>"; };
-		9FA4D75D2A0B724C004E284D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +67,12 @@
 			children = (
 				9FA4D73D2A0AFBD4004E284D /* InventoryApp.swift */,
 				9FA4D7542A0B0022004E284D /* ItemView.swift */,
-				9FA4D7592A0B680A004E284D /* ImagePickerView.swift */,
-				9FA4D75B2A0B722F004E284D /* CaptureImageView.swift */,
-				9FA4D75D2A0B724C004E284D /* Coordinator.swift */,
+				9F56B0642B2BAFF300929199 /* InventoryItem.swift */,
 				9FA4D73F2A0AFBD4004E284D /* ContentView.swift */,
-				9FA4D7522A0AFECD004E284D /* InventoryDataController.swift */,
-				9FA4D74B2A0AFC76004E284D /* Inventory.xcdatamodeld */,
+				9F56B06A2B2BBFD400929199 /* House.swift */,
+				9F56B0682B2BB36E00929199 /* HouseListView.swift */,
+				9F56B06C2B2BC11200929199 /* HouseView.swift */,
+				9F39D8792B2D634F00069420 /* ImagePickerWindow.swift */,
 				9FA4D7412A0AFBD5004E284D /* Assets.xcassets */,
 				9FA4D7432A0AFBD5004E284D /* Preview Content */,
 			);
@@ -118,7 +118,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					9FA4D7392A0AFBD4004E284D = {
 						CreatedOnToolsVersion = 14.3;
@@ -163,14 +163,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FA4D75E2A0B724C004E284D /* Coordinator.swift in Sources */,
-				9FA4D75C2A0B722F004E284D /* CaptureImageView.swift in Sources */,
-				9FA4D7532A0AFECD004E284D /* InventoryDataController.swift in Sources */,
-				9FA4D74D2A0AFC76004E284D /* Inventory.xcdatamodeld in Sources */,
+				9F56B06D2B2BC11200929199 /* HouseView.swift in Sources */,
+				9F56B0652B2BAFF300929199 /* InventoryItem.swift in Sources */,
 				9FA4D7402A0AFBD4004E284D /* ContentView.swift in Sources */,
 				9FA4D7552A0B0022004E284D /* ItemView.swift in Sources */,
-				9FA4D75A2A0B680B004E284D /* ImagePickerView.swift in Sources */,
+				9F39D87A2B2D634F00069420 /* ImagePickerWindow.swift in Sources */,
 				9FA4D73E2A0AFBD4004E284D /* InventoryApp.swift in Sources */,
+				9F56B06B2B2BBFD400929199 /* House.swift in Sources */,
+				9F56B0692B2BB36E00929199 /* HouseListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +213,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -227,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -273,6 +274,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -281,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -392,19 +394,6 @@
 			productName = SymbolPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		9FA4D74B2A0AFC76004E284D /* Inventory.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9FA4D74C2A0AFC76004E284D /* Inventory.xcdatamodel */,
-			);
-			currentVersion = 9FA4D74C2A0AFC76004E284D /* Inventory.xcdatamodel */;
-			path = Inventory.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9FA4D7322A0AFBD4004E284D /* Project object */;
 }

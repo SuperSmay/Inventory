@@ -6,52 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     
-    @Environment(\.managedObjectContext) private var moc
+    @Environment(\.modelContext) var modelContext
     
-    @FetchRequest(sortDescriptors: [], predicate: NSPredicate(format: "isTopLevel == TRUE")) private var rooms: FetchedResults<Item>
-    
-    @State private var itemDisplayStack = [Item]()
+    @Query var houses: [House]
     
     var body: some View {
-        NavigationStack(path: $itemDisplayStack) {
-            
-            VStack {
-                Form {
-                    ForEach(rooms) { item in
-                        NavigationLink(item.name ?? "Unnamed item", value: item)
-                    }
-                }
-                .navigationDestination(for: Item.self) { item in
-                    ItemView(itemDisplayStack: $itemDisplayStack, item: item)
-                }
-                
-                Button {
-                    let newItem = Item(context: moc)
-                    newItem.isTopLevel = true
-                    newItem.id = UUID()
-                    
-                    do {
-                        try moc.save()
-                        itemDisplayStack.append(newItem)
-                    } catch {
-                        print(error)
-                    }
-                    
-                    
-                } label: {
-                    Label("Add", systemImage: "plus")
-                }
-                
-            }
-            .navigationTitle("Inventory")
-            
-        }
-        
+        HouseListView(houses: houses)   
     }
+        
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

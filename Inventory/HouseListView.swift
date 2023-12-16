@@ -6,13 +6,55 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HouseListView: View {
+    
+    @Environment(\.modelContext) var modelContext
+    
+    var houses: [House]
+    @State private var houseDisplayStack = NavigationPath()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $houseDisplayStack) {
+            Form {
+                ForEach(houses) { house in
+                    NavigationLink(value: house) {
+                        Text(house.name)
+                    }
+                    .navigationDestination(for: House.self) { house in
+                        HouseView(house: house, navigationPath: $houseDisplayStack)
+                    }
+                    
+                }
+            }
+            .toolbar {
+                Button {
+                    let newHouse = House(name: "Home")
+                    modelContext.insert(newHouse)
+                    houseDisplayStack.append(newHouse)
+                    
+                } label: {
+                    Label("Add", systemImage: "plus")
+                }
+            }
+            .navigationTitle("Inventory")
+        }
     }
 }
 
 #Preview {
-    HouseListView()
+    
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: House.self, configurations: config)
+        
+        let example = House(name: "Home Sweet Home", address: "142 Fellowship Drive", storedItems: [])
+        
+        return HouseListView(houses: [example])
+            .modelContainer(container)
+        
+    } catch {
+        fatalError("Failed to create preview")
+    }
 }
