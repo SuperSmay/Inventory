@@ -46,9 +46,10 @@ struct ImagePickerWindow: View {
                 } label: {
                     Label("Choose Photo", systemImage: "photo.on.rectangle")
                 }
-                if case .success = imageState {
+                if imageData != nil {
                     Button(role: .destructive) {
                         imageState = .empty
+                        imageData = nil
                     } label: {
                         Label("Remove Photo", systemImage: "trash")
                     }
@@ -77,19 +78,11 @@ struct ImagePickerWindow: View {
                     switch imageState {
                         case .success:
                             Label("Photo Loaded", systemImage: "checkmark.circle")
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(.thickMaterial)
-                                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                                .padding()
                         case .loading(let progress):
                             ProgressView(value: progress.fractionCompleted)
                         case .empty:
                             Button(action: { photoPickerShowing = true }) {
                                 Label("Add Photo", systemImage: "camera")
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    .background(.thickMaterial)
-                                    .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                                    .padding()
                             }
                             
                         case .failure:
