@@ -22,9 +22,7 @@ struct HouseListView: View {
                     NavigationLink(value: house) {
                         Text(house.name)
                     }
-                    .navigationDestination(for: House.self) { house in
-                        HouseView(house: house, navigationPath: $houseDisplayStack)
-                    }
+                    
                     
                 }
             }
@@ -37,6 +35,12 @@ struct HouseListView: View {
                 } label: {
                     Label("Add", systemImage: "plus")
                 }
+            }
+            .navigationDestination(for: InventoryItem.self) { item in
+                ItemView(item: item)
+            }
+            .navigationDestination(for: House.self) { house in
+                HouseView(house: house)
             }
             .navigationTitle("Inventory")
         }

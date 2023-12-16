@@ -11,8 +11,8 @@ import CoreTransferable
 
 struct ImagePickerWindow: View {
     
-    @Binding var imageSelection: PhotosPickerItem?
-    @Binding var imageState: ImageState
+    @State var imageSelection: PhotosPickerItem? = nil
+    @State var imageState: ImageState = .empty
     @Binding var imageData: Data?
     
     @State var photoPickerShowing = false
@@ -75,12 +75,12 @@ struct ImagePickerWindow: View {
                 } else {
                     
                     switch imageState {
-                        case .success(let data):
-                        Label("Photo Loaded", systemImage: "checkmark.circle")
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(.thickMaterial)
-                            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                            .padding()
+                        case .success:
+                            Label("Photo Loaded", systemImage: "checkmark.circle")
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .background(.thickMaterial)
+                                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                                .padding()
                         case .loading(let progress):
                             ProgressView(value: progress.fractionCompleted)
                         case .empty:
@@ -118,6 +118,7 @@ struct ImagePickerWindow: View {
                 switch result {
                     case .success(let data?):
                         self.imageState = .success(data)
+                        self.imageData = data
                     case .success(nil):
                         self.imageState = .empty
                     case .failure(let error):
@@ -133,5 +134,5 @@ struct ImagePickerWindow: View {
     @State var imageSelection: PhotosPickerItem?
     @State var imageState: ImagePickerWindow.ImageState = .empty
     
-    return ImagePickerWindow(imageSelection: $imageSelection, imageState: $imageState, imageData: Binding.constant(nil))
+    return ImagePickerWindow(imageData: Binding.constant(nil))
 }

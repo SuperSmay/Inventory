@@ -14,7 +14,6 @@ struct ItemView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.colorScheme) private var colorScheme
     
-    @Binding var itemDisplayStack: [InventoryItem]
     @Bindable var item: InventoryItem
     
     @FocusState var descriptionFocused
@@ -24,63 +23,51 @@ struct ItemView: View {
     
     var body: some View {
         
-        ScrollView {
-            VStack {
+        Form {
                 
-                TextField("Name", text: $item.name)
-                    .padding()
-                    .background(.thickMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                    .padding()
-                
-                
-                
-                TextField("Description", text: $item.notes, axis: .vertical)
-                    .multilineTextAlignment(.leading)
-                    .focused($descriptionFocused)
-                    .toolbar {
-                        ToolbarItemGroup(placement: .keyboard) {
-                            
-                            Spacer()
-                            
-                            Button("Done") {
-                                descriptionFocused = false
-                            }
-                            
-                        }
-                    }
-                    .padding()
-                    .background(.thickMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                    .padding()
-                     
-                Form {
-                    ForEach(item.subitems) { subitem in
+            TextField("Name", text: $item.name)
+            
+            ImagePickerWindow(imageData: $item.imageData)
+            
+            TextField("Description", text: $item.notes, axis: .vertical)
+                .multilineTextAlignment(.leading)
+                .focused($descriptionFocused)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
                         
-                        NavigationLink(subitem.name, destination: ItemView(itemDisplayStack: $itemDisplayStack, item: subitem))
-
+                        Spacer()
+                        
+                        Button("Done") {
+                            descriptionFocused = false
+                        }
+                        
                     }
                 }
-                
-                Button {
-
-                    let newItem = InventoryItem(name: "New")
-                    item.subitems.append(newItem)
+                 
+            ForEach(item.subitems) { subitem in
                     
-                } label: {
-                    Label("Add", systemImage: "plus")
+                NavigationLink(value: subitem) {
+                    Text(subitem.name)
                 }
-                
+
             }
-            .navigationTitle(Text(item.name))
-        }
-    }
-    
-    func loadImage() {
         
+            Button {
+
+                let newItem = InventoryItem(name: "New")
+                print(newItem.name)
+                item.subitems.append(newItem)
+                
+            } label: {
+                Label("Add", systemImage: "plus")
+            }
+        }
+        .navigationTitle(Text(item.name))
+                
     }
-    
+        
 }
+
 
 #Preview {
     
@@ -90,7 +77,7 @@ struct ItemView: View {
         
         let example = InventoryItem()
         
-        return ItemView(itemDisplayStack: Binding.constant([]), item: example)
+        return ItemView(item: example)
             .modelContainer(container)
     } catch {
         fatalError("Failed to create model")

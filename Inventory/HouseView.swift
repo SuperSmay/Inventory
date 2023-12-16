@@ -14,13 +14,8 @@ struct HouseView: View {
     @Environment(\.modelContext) var modelContext
     
     @Bindable var house: House
-    @Binding var navigationPath: NavigationPath
     
     @State var itemDisplayStack = [InventoryItem]()
-    
-    @State var imageSelection: PhotosPickerItem?
-    @State var imageState: ImagePickerWindow.ImageState = .empty
-    @State var imageData: Data? = nil
     
     var body: some View {
         Form {
@@ -28,16 +23,14 @@ struct HouseView: View {
                     
                     TextField("Name", text: $house.name)
                     
-                    ImagePickerWindow(imageSelection: $imageSelection, imageState: $imageState, imageData: $imageData)
+                    ImagePickerWindow(imageData: $house.imageData)
+                    
                 }
                 
                 Section("Rooms") {
                     ForEach(house.storedItems) { item in
                         NavigationLink(value: item) {
-                            
-                        }
-                        .navigationDestination(for: InventoryItem.self) { item in
-                            ItemView(itemDisplayStack: $itemDisplayStack, item: item)
+                            Text(item.name)
                         }
                     }
                     
@@ -59,7 +52,7 @@ struct HouseView: View {
         
         let example = House(name: "Home", address: "142 Fellowship Drive", storedItems: [])
         
-        return HouseView(house: example, navigationPath: Binding.constant(NavigationPath()))
+        return HouseView(house: example)
             .modelContainer(container)
         
     } catch {
