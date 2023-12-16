@@ -15,7 +15,7 @@ struct HouseView: View {
     
     @Bindable var house: House
     
-    @State var itemDisplayStack = [InventoryItem]()
+    @State var newRoomName = ""
     
     var body: some View {
         Form {
@@ -34,10 +34,29 @@ struct HouseView: View {
                         }
                     }
                     
-                    Button("Add") {
-                        let newItem = InventoryItem()
-                        house.storedItems.append(newItem)
+                    HStack {
+                        
+                        TextField("New item", text: $newRoomName)
+                        
+                        Rectangle()
+                            .frame(width: 1.5)
+                            .foregroundStyle(.secondary)
+                            .opacity(0.15)
+                        
+                        Button {
+                            
+                            guard newRoomName != "" else { return }
+                            
+                            let newItem = InventoryItem(name: newRoomName)
+                            house.storedItems.append(newItem)
+                            newRoomName = ""
+                            
+                        } label: {
+                            Label("Add", systemImage: "plus")
+                        }
+                        
                     }
+
                 }
             
         }
