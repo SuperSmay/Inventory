@@ -13,6 +13,7 @@ class House {
     var name: String
     var address: String
     var storedItems: [InventoryItem]
+    var uuid: UUID
     @Attribute(.externalStorage) var imageData: Data?
     
     /// Dates
@@ -26,5 +27,6 @@ class House {
         self.imageData = imageData
         self.dateEdited = .now
         self.dateCreated = .now
+        self.uuid = UUID()
     }
 }
