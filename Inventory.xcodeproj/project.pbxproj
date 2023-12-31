@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F35C06E2B40FE5200893775 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35C06D2B40FE5200893775 /* Test.swift */; };
 		9F39D87A2B2D634F00069420 /* ImagePickerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F39D8792B2D634F00069420 /* ImagePickerWindow.swift */; };
 		9F56B0652B2BAFF300929199 /* InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56B0642B2BAFF300929199 /* InventoryItem.swift */; };
 		9F56B0692B2BB36E00929199 /* HouseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F56B0682B2BB36E00929199 /* HouseListView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F35C06D2B40FE5200893775 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		9F39D8792B2D634F00069420 /* ImagePickerWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerWindow.swift; sourceTree = "<group>"; };
 		9F56B0642B2BAFF300929199 /* InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItem.swift; sourceTree = "<group>"; };
 		9F56B0682B2BB36E00929199 /* HouseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				9FA4D73D2A0AFBD4004E284D /* InventoryApp.swift */,
 				9FA4D7542A0B0022004E284D /* ItemView.swift */,
+				9F35C06D2B40FE5200893775 /* Test.swift */,
 				9F56B0642B2BAFF300929199 /* InventoryItem.swift */,
 				9FA4D73F2A0AFBD4004E284D /* ContentView.swift */,
 				9F56B06A2B2BBFD400929199 /* House.swift */,
@@ -165,6 +168,7 @@
 			files = (
 				9F56B06D2B2BC11200929199 /* HouseView.swift in Sources */,
 				9F56B0652B2BAFF300929199 /* InventoryItem.swift in Sources */,
+				9F35C06E2B40FE5200893775 /* Test.swift in Sources */,
 				9FA4D7402A0AFBD4004E284D /* ContentView.swift in Sources */,
 				9FA4D7552A0B0022004E284D /* ItemView.swift in Sources */,
 				9F39D87A2B2D634F00069420 /* ImagePickerWindow.swift in Sources */,

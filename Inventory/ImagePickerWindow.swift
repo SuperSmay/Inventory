@@ -88,7 +88,7 @@ struct ImagePickerWindow: View {
                         case .failure:
                             Image(systemName: "exclamationmark.triangle.fill")
                                 .font(.system(size: 40))
-                                .foregroundColor(.white)
+                                .foregroundColor(.yellow)
                     }
                 }
             }
